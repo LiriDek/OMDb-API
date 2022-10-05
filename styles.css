@@ -95,12 +95,30 @@ nav {
 
 .results__list {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
     padding-top: 60px;
 }
 
 .result__movie {
     width: calc(100% / 3);
     padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.result__img--container {
+    width: 350px;
+    height: 350px;
+    border: 1px solid #242424;
+}
+
+.result__img {
+    width: 100%;
+    max-height: 350px;
 }
