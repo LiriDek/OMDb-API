@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*
+
+    NAV
+
+*/
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.nav__link--container {
+    display: flex;
+}
+
+.nav__link--list {
+    padding-right: 12px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+
+/*
+
+    SEARCH BAR
+
+*/
+
+.search {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.search__title {
+    padding: 20px 0;
+}
+
+.search-bar--container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+}
+
+.search-bar {
+    width: 100%;
+    padding: 20px 192px 20px 32px;
+    border-radius: 50px;
+}
+
+.submit__search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    position: absolute;
+    border-radius: 50px;
+    width: 100px;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: 8px;
+}
+
+
+/*
+
+    RESULTS
+
+*/
+
+
+.results__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 60px;
+}
+
+.result__movie {
+    width: calc(100% / 3);
+    padding: 24px;
+}
