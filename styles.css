@@ -21,6 +21,10 @@ button {
     cursor: pointer;
 }
 
+.no-click {
+    cursor: not-allowed;
+}
+
 /*
 
     NAV
@@ -81,6 +85,7 @@ nav {
     padding: 20px 192px 20px 32px;
     border-radius: 50px;
     background-color: #fff;
+    color: #242424;
     border: none;
 }
 
