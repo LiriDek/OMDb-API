@@ -1,18 +1,22 @@
 const moviesListEl = document.querySelector(".results__list");
-const searchValue = document.querySelector("input");
-const searchResult = document.querySelector(".result__title--description")
+const val = document.querySelector("input");
+const searchResult = document.querySelector(".result__title--description");
 
-
-
-async function main(value) {
-    const movies = await fetch(`https://www.omdbapi.com/?apikey=ea7fe794&s=${value}`);
-    const moviesDatas = await movies.json();
-    console.log(moviesDatas)
-
-    moviesListEl.innerHTML = moviesDatas.Search.map((name) => moviesHTML(name)).slice(0, 6).join("");
+async function onSearchEnter(event) {
+    const val = document.querySelector("input").value;
+    if (event.keyCode === 13) {
+        renderMovies(val)
+    }
 }
 
-main();
+async function renderMovies(val) {
+    const movies = await fetch(`https://www.omdbapi.com/?apikey=ea7fe794&s=${val}`);
+    const moviesDatas = await movies.json();
+    console.log(moviesDatas)
+    let result = val;
+    searchResult.innerHTML = result;
+    moviesListEl.innerHTML = moviesDatas.Search.map((name) => moviesHTML(name)).slice(0, 9).join("");
+}
 
 function moviesHTML(name) {
     return `<div class="result__movie">
