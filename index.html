@@ -38,6 +38,20 @@
                 </button>
             </div>
         </div>
+        <div class="filter">
+            <h2 class="filter__title">
+              All Series and Movies
+            </h2>
+            <select name="" id="filter" onchange="filterMovies(event)">
+              <option value="" disabled selected>Sort</option>
+              <option value="NEW_TO_OLD">Year release : New to Old</option>
+              <option value="OLD_TO_NEW">Year release : Old to New</option>
+              <option value="A-Z">Title : A-Z</option>
+            </select> 
+        </div>
+        <div class="movies movies__loading">
+            <i class="fas fa-spinner books__loading--spinner"></i>
+        </div>
         <div id="results">
             <div class="results__list">
                 <div class="result__movie">
@@ -46,6 +60,7 @@
                     </figure>
                     <div class="result__movie--description">
                         <h3 class="result__title--description"></h3>
+                        <h3 class="result__year-release--description"></h3>
                     </div>
                 </div>
             </div>
