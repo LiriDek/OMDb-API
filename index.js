@@ -18,10 +18,10 @@ async function onClicking(event) {
 async function filterMovies(event) {
     const filter = event.target.value
     if (filter === "NEW_TO_OLD") {
-        moviesDatas.Search.sort((a, b) => a.Year - b.Year)
+        moviesDatas.Search.sort((a, b) => b.Year - a.Year)
     }
     else if (filter === "OLD_TO_NEW") {
-        moviesDatas.Search.sort((a, b) => b.Year - a.Year)
+        moviesDatas.Search.sort((a, b) => a.Year - b.Year)
     } 
     else if (filter === "A-Z") {
         moviesDatas.Search.sort((a, b) => a.Title.localeCompare(b.Title))
