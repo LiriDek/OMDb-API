@@ -15,19 +15,19 @@ async function onClicking(event) {
     loadMovies(val)
 }
 
-function filterMovies(event) {
-        const filter = event.target.value
-        if (filter === "NEW_TO_OLD") {
-            moviesDatas.Search.sort((a, b) => a.Year - b.Year)
-        }
-        else if (filter === "OLD_TO_NEW") {
-            moviesDatas.Search.sort((a, b) => b.Year - a.Year)
-        } 
-        else if (filter === "A-Z") {
-            moviesDatas.Search.sort((a, b) => a.Title.localeCompare(b.Title))
-        }
-        moviesListEl.innerHTML = moviesDatas.Search.map((name) => moviesHTML(name)).slice(0, 6).join("")
+async function filterMovies(event) {
+    const filter = event.target.value
+    if (filter === "NEW_TO_OLD") {
+        moviesDatas.Search.sort((a, b) => a.Year - b.Year)
     }
+    else if (filter === "OLD_TO_NEW") {
+        moviesDatas.Search.sort((a, b) => b.Year - a.Year)
+    } 
+    else if (filter === "A-Z") {
+        moviesDatas.Search.sort((a, b) => a.Title.localeCompare(b.Title))
+    }
+    moviesListEl.innerHTML = moviesDatas.Search.map((name) => moviesHTML(name)).slice(0, 6).join("")
+}
 
 async function loadMovies(val) {
     const movies = await fetch(`https://www.omdbapi.com/?apikey=ea7fe794&s=${val}`);
@@ -37,7 +37,6 @@ async function loadMovies(val) {
     searchResult.innerHTML = result;
     moviesListEl.innerHTML = moviesDatas.Search.map((name) => moviesHTML(name)).slice(0, 9).join("");
 }
-
 
 function moviesHTML(name) {
     if (`${name.Poster}` !== "N/A") {
